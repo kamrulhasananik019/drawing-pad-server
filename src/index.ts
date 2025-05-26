@@ -1,4 +1,14 @@
-import { env } from "./env";
+import type { Request, Response } from "express";
 
-console.log("Hello world!");
-console.log(env.FOO);
+import express from "express";
+
+const app = express();
+const port = 3000;
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello Anik");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
